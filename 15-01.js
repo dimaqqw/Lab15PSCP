@@ -47,11 +47,12 @@ app.post('/Add', async (req, res) => {
   console.log('post add')
   try {
     const id = await readData()
+    const lastElementId = id[id.length - 1].id + 1
     // console.log(id.length)
     const newData = {
       name: req.body.name,
       number: req.body.number,
-      id: id.length,
+      id: lastElementId,
     }
     const jsonData = await fs.readFile(path, 'utf8')
     const existingData = JSON.parse(jsonData)
