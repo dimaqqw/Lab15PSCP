@@ -1,5 +1,3 @@
-function switchGetHome() {}
-
 function switchGetAdd() {
   window.location.href = 'Add'
 }
@@ -85,8 +83,6 @@ function postDataByUpdate() {
 }
 
 function postDataByDelete(id) {
-  // const id = document.getElementById('id').value
-
   fetch('/Delete', {
     method: 'POST',
     headers: {
@@ -103,4 +99,44 @@ function postDataByDelete(id) {
       }
     })
     .catch((error) => console.error('Error deleting data:', error))
+}
+
+if (document.getElementById('number')) {
+  console.log('qwe')
+  document
+    .getElementById('number')
+    .addEventListener('input', handleNumberInputChange)
+}
+if (document.getElementById('fio')) {
+  document
+    .getElementById('fio')
+    .addEventListener('input', handleNameInputChange)
+}
+
+function handleNumberInputChange() {
+  var numberInput = document.getElementById('number')
+  var deleteButton = document.querySelector('.delete-button')
+  var originalNumber = document.getElementById('numberForDelete').value
+  console.log(numberInput)
+  console.log(deleteButton)
+  console.log(originalNumber)
+  if (numberInput.value !== originalNumber) {
+    deleteButton.disabled = true
+  } else {
+    deleteButton.disabled = false
+  }
+}
+
+function handleNameInputChange() {
+  var nameInput = document.getElementById('fio')
+  var deleteButton = document.querySelector('.delete-button')
+  var originalName = document.getElementById('nameForDelete').value
+  console.log(nameInput)
+  console.log(deleteButton)
+  console.log(originalName)
+  if (nameInput.value !== originalName) {
+    deleteButton.disabled = true
+  } else {
+    deleteButton.disabled = false
+  }
 }

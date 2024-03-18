@@ -14,6 +14,16 @@
     value='{{dataForUpdateString.number}}'
   />
   <input type='hidden' id='id' value='{{dataForUpdateString.id}}' />
+  <input
+    type='hidden'
+    id='nameForDelete'
+    value='{{dataForUpdateString.name}}'
+  />
+  <input
+    type='hidden'
+    id='numberForDelete'
+    value='{{dataForUpdateString.number}}'
+  />
 </div>
 <div class='buttons'>
   <button
@@ -21,7 +31,7 @@
     onclick='postDataByUpdate()'
   >Изменить</button>
   <button
-    class='add-decline-button add-button'
+    class='add-decline-button add-button delete-button'
     onclick='postDataByDelete({{dataForUpdateString.id}})'
   >Удалить</button>
   <button
