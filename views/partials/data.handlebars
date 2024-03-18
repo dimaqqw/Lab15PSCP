@@ -1,0 +1,16 @@
+<div class='button-string-container'>
+  {{#each data}}
+    <div
+      class='button-string'
+      onclick='switchGetUpdate("{{this.name}}",{{this.number}}, {{this.id}})'
+      id='{{this.id}}'
+    >
+      <a>
+        <p>
+          {{this.name}}
+        </p>
+        <p>{{this.number}}</p>
+      </a>
+    </div>
+  {{/each}}
+</div>

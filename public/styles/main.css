@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.92);
+  text-align: center;
+}
+
+.button-string-container {
+  border: white 1px solid;
+  width: 100%;
+  border-radius: 15px;
+  margin: auto;
+  text-align: center;
+}
+
+.button-string {
+  width: 80%;
+  margin: auto;
+}
+
+.button-string a {
+  display: flex;
+  justify-content: space-around;
+  border: white 1px solid;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.button-string a:hover {
+  border: rgb(0, 250, 12) 1px solid;
+  transition: 0.2s;
+}
+
+.container {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.add-button {
+  width: 100%;
+  color: black;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px 0;
+  border: 1px white solid;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+}
+
+.add-button:hover {
+  color: rgb(0, 250, 12);
+  border-color: rgb(0, 250, 12);
+  transition: 0.15s;
+}
+
+.string-for-add,
+.string-for-update {
+  margin-top: 15px;
+  border: 1px rgb(255, 255, 255) solid;
+  padding: 15px 0;
+}
+.string-for-add input,
+.string-for-update input {
+  color: white;
+  background-color: transparent;
+  height: 30px;
+  padding-left: 20px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.add-decline-button {
+  margin-left: 10px;
+}
+
+.add-decline-button:hover {
+  color: rgb(196, 11, 11);
+  border-color: rgb(196, 11, 11);
+  transition: 0.15s;
+}
