@@ -13,7 +13,10 @@ function postDataByAddButton() {
   const dataNumber = +document.getElementById('number').value
   console.log(Number.isInteger(dataNumber))
   if (dataName != '' && dataNumber != '') {
-    if (Number.isInteger(dataNumber)) {
+    if (
+      Number.isInteger(dataNumber) &&
+      Number.toString(dataNumber).length > 5
+    ) {
       var xhr = new XMLHttpRequest()
       xhr.open('POST', '/Add', true)
       xhr.setRequestHeader('Content-Type', 'application/json')
@@ -51,7 +54,13 @@ function postDataByUpdate() {
   const id = +document.getElementById('id').value
   const name = document.getElementById('fio').value
   const number = +document.getElementById('number').value
-  if (id != '' && name != '' && number != '' && Number.isInteger(number)) {
+  if (
+    id != '' &&
+    name != '' &&
+    number != '' &&
+    Number.isInteger(number) &&
+    Number.toString(dataNumber).length > 5
+  ) {
     const data = { id, name, number }
 
     fetch('/Update', {
