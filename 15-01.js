@@ -47,8 +47,7 @@ app.post('/Add', async (req, res) => {
   console.log('post add')
   try {
     const id = await readData()
-    const lastElementId = id[id.length - 1].id + 1
-    // console.log(id.length)
+    const lastElementId = id.length > 0 ? id[id.length - 1].id + 1 : 0
     const newData = {
       name: req.body.name,
       number: req.body.number,
@@ -93,12 +92,10 @@ app.post('/Update', async (req, res) => {
       return item
     })
     await fs.writeFile(path, JSON.stringify(updatedData, null, 2))
-    res.status(200).send('Data updated successfully!')
+    res.redirect('/')
   } catch (error) {
     console.error('Error updating data:', error)
-    res.status(500).send('Error updating data')
   }
-  res.redirect('/')
 })
 
 // Удаляет строку в json-файле, в ответе форма GET:/
