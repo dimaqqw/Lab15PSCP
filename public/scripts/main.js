@@ -89,7 +89,7 @@ function postDataByUpdate() {
 }
 
 function postDataByDelete(id) {
-  const id = document.getElementById('id').value
+  // const id = document.getElementById('id').value
 
   fetch('/Delete', {
     method: 'POST',
