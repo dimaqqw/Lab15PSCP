@@ -104,15 +104,15 @@ app.post('/Update', async (req, res) => {
 app.post('/Delete', async (req, res) => {
   try {
     const { id } = req.body
+    console.log(id)
     const data = await readData()
     const updatedData = data.filter((item) => item.id !== parseInt(id))
+    console.log(updatedData)
     await fs.writeFile(path, JSON.stringify(updatedData, null, 2))
-    res.status(200).send('Data deleted successfully!')
+    res.redirect('/')
   } catch (error) {
     console.error('Error deleting data:', error)
-    res.status(500).send('Error deleting data')
   }
-  res.redirect('/')
 })
 
 app.listen(PORT, () => {

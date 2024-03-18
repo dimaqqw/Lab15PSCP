@@ -6,19 +6,6 @@ function switchGetAdd() {
 
 function switchGetUpdate(name, number, id) {
   window.location.href = 'Update/' + name + '/' + number + '/' + id
-  // var xhr = new XMLHttpRequest()
-  // xhr.open('GET', '/Update', true)
-  // xhr.setRequestHeader('Content-Type', 'application/json')
-  // xhr.onreadystatechange = function () {
-  //   if (xhr.readyState === XMLHttpRequest.DONE) {
-  //     if (xhr.status === 200) {
-  //       console.log('POST request successful!')
-  //       window.location.href = '/'
-  //     } else {
-  //       console.error('Error:', xhr.status)
-  //     }
-  //   }
-  // }
 }
 
 function postDataByAddButton() {
@@ -61,10 +48,10 @@ if (window.location.pathname.includes('/Update')) {
 }
 
 function postDataByUpdate() {
-  const id = document.getElementById('id').value
+  const id = +document.getElementById('id').value
   const name = document.getElementById('fio').value
-  const number = document.getElementById('number').value
-  if (id != '' && name != '' && number != '' && Number.isInteger(dataNumber)) {
+  const number = +document.getElementById('number').value
+  if (id != '' && name != '' && number != '' && Number.isInteger(number)) {
     const data = { id, name, number }
 
     fetch('/Update', {
