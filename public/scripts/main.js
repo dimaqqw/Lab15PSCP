@@ -52,12 +52,20 @@ function postDataByUpdate() {
   const id = +document.getElementById('id').value
   const name = document.getElementById('fio').value
   const number = +document.getElementById('number').value
+  console.log(id)
+  console.log(name)
+  console.log(number)
+  console.log(id != '')
+  console.log(name != '')
+  console.log(number != '')
+  console.log(Number.isInteger(number))
+  console.log(Number.toString(number).length > 5)
   if (
     id != '' &&
     name != '' &&
     number != '' &&
     Number.isInteger(number) &&
-    Number.toString(dataNumber).length > 5
+    Number.toString(number).length > 5
   ) {
     const data = { id, name, number }
 
@@ -102,7 +110,6 @@ function postDataByDelete(id) {
 }
 
 if (document.getElementById('number')) {
-  console.log('qwe')
   document
     .getElementById('number')
     .addEventListener('input', handleNumberInputChange)
